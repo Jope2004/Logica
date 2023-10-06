@@ -1,9 +1,5 @@
 public class Parcial {
-    static int numHotel() {
-        int hotel = (int) (Math.random() * 7 + 1);
-        return hotel;
-    }
-
+    
     static int numHoras() {
         int hora = (int) (Math.random() * 24 + 1);
         return hora;
@@ -16,7 +12,7 @@ public class Parcial {
 
     static double getTipoLuz() {
         int luces = (int) (Math.random() * 3 + 1);
-        double precioLuz = 0.0; // Inicializamos el precio de la luz
+        double precioLuz = 0.0; 
 
         switch (luces) {
             case 1:
@@ -40,7 +36,8 @@ public class Parcial {
     }
 
     public static void main(String[] args) {
-        int numHoteles = 5;
+
+        int numHoteles = (int) (Math.random() * 7 + 1);
 
         for (int i = 1; i <= numHoteles; i++) {
             System.out.println("Hotel " + i);
