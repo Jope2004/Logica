@@ -14,29 +14,33 @@ public class Parcial {
         return pisos;
     }
 
-    static void Luz() {
+    static double getTipoLuz() {
         int luces = (int) (Math.random() * 3 + 1);
+        double precioLuz = 0.0; // Inicializamos el precio de la luz
+
         switch (luces) {
             case 1:
-                double halogena = 0.25;
-                System.out.println("El tipo de luz es halogena y su valor es: " + halogena);
+                precioLuz = 0.25;
+                System.out.println("El tipo de luz es halógena y su valor es: " + precioLuz);
                 break;
             case 2:
-                double led = 0.50;
-                System.out.println("El tipo de luz es led y su valor es: " + led);
+                precioLuz = 0.50;
+                System.out.println("El tipo de luz es LED y su valor es: " + precioLuz);
                 break;
             case 3:
-                double multiled = 1.0;
-                System.out.println("El tipo de luz es multiled y su valor es: " + multiled);
+                precioLuz = 1.0;
+                System.out.println("El tipo de luz es multiled y su valor es: " + precioLuz);
                 break;
             default:
                 System.out.println("Tipo de luz desconocido");
                 break;
         }
+
+        return precioLuz;
     }
 
     public static void main(String[] args) {
-        int numHoteles = 5; 
+        int numHoteles = 5;
 
         for (int i = 1; i <= numHoteles; i++) {
             System.out.println("Hotel " + i);
@@ -46,20 +50,17 @@ public class Parcial {
             int numeroHoras = numHoras();
             System.out.println("Número de horas: " + numeroHoras);
 
-            int numerPisos = numPisos();
-            System.out.println("Número de pisos: " + numerPisos);
+            int numPisos = numPisos();
+            System.out.println("Número de pisos: " + numPisos);
 
-            Luz();
+            double precioLuz = getTipoLuz();
 
-            int cantidadLuz = (numerPisos * 3);
-            int LuzHotel = (cantidadLuz*numerPisos);
+            int cantidadLuz = numPisos * 3;
+            double PrecioHora = cantidadLuz * precioLuz;
 
-            
+            System.out.println("El Hotel gasta $" + PrecioHora + " por hora");
 
-
-
-            
-
+              System.out.println();
         }
     }
 }
